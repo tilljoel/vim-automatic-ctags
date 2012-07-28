@@ -46,6 +46,11 @@ lines.
         let g:automatic_ctags_cmd="ctags"
         let g:atomatic_ctags_filename="tags"
 
+Make sure you set your `tags` variable also, This will look in the current
+directory for "tags", and work up the tree towards root until one is found.
+
+        set tags=./tags;/
+
 Contributing
 ------------
 Fork it, fix it. Its my first vim plugin ever.
