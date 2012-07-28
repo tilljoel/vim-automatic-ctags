@@ -1,12 +1,13 @@
 module AutomaticCtags
   module FileHelpers
+
     def find_project_root(files)
       dirs = get_search_directories
       Find.find(*dirs) do |path|
-          basename = File.basename(path)
-          files.each do |file|
-            return File.dirname(path) if basename == file
-          end
+        basename = File.basename(path)
+        files.each do |file|
+          return File.dirname(path) if basename == file
+        end
       end
     end
 

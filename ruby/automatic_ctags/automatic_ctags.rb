@@ -14,10 +14,10 @@ module AutomaticCtags
     end
 
     def VIM.get_var(var_name, default)
-      value = case VIM::exists?(var_name)
-              when true  then VIM::evaluate(var_name)
-              when false then default
-              end
+      case VIM::exists?(var_name)
+        when true  then VIM::evaluate(var_name)
+        when false then default
+      end
     end
 
   end
@@ -33,7 +33,7 @@ module AutomaticCtags
     tagsfile = File.join(dir, ctags_filename)
     if !File.exist?(tagsfile) or File.writable?(tagsfile)
       cmd = "#{ctags_cmd} -f #{tagsfile} #{dir}"
-      output = system(cmd)
+      system(cmd)
     end
   end
 
