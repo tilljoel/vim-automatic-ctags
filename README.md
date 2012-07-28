@@ -46,6 +46,11 @@ lines.
         let g:automatic_ctags_cmd="ctags"
         let g:atomatic_ctags_filename="tags"
 
+Add `.gitignore` settings globally since we create a lot of tags-files now.
+
+        git config --global core.excludesfile ~/.gitignore
+        printf "tags" >> ~/.gitignore
+
 Make sure you set your `tags` variable also, This will look in the current
 directory for "tags", and work up the tree towards root until one is found.
 
