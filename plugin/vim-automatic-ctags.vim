@@ -32,8 +32,8 @@ begin
 rescue LoadError
   load_path_modified = false
   ::VIM::evaluate('&runtimepath').to_s.split(',').each do |path|
-    if path.include?("automatic-ctags") and !$LOAD_PATH.include?(lib) and File.exist?(lib)
-      $LOAD_PATH << lib
+    if path.include?("automatic-ctags") and !$LOAD_PATH.include?(path) and File.exist?(path)
+      $LOAD_PATH << path
       load_path_modified = true
     end
   end
