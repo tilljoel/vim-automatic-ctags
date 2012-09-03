@@ -17,7 +17,7 @@ module AutomaticCtags
     return unless File.directory?(dir)
     tagsfile = File.join(dir, ctags_filename)
     if !File.exist?(tagsfile) or File.writable?(tagsfile)
-      cmd = "#{ctags_cmd} -f #{tagsfile} #{dir}"
+      cmd = "#{ctags_cmd} -f #{tagsfile} #{dir}  >/dev/null 2>&1"
       system(cmd)
     end
   end

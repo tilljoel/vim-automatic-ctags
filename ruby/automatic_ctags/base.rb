@@ -2,7 +2,7 @@ module AutomaticCtags
   module CtagsSettings
 
     DEFAULT_CTAGS_FILES = ".git,Gemfile"
-    DEFAULT_CTAGS_CMD ="ctags -R"
+    DEFAULT_CTAGS_CMD ="ctags -R --languages=ruby"
     DEFAULT_CTAGS_FILENAME = "tags"
     DEFAULT_CTAGS_MAX_DEPTH = 3
 
